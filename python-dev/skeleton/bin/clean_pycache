@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+# search and delete all the pycache folder in the hierarchy
+rm -rf `find . -iname "__pycache__"`
