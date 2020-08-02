@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+
+usage () {
+    echo "Usage: setup_project <project_name>"
+}
+
+
+if [ $# -ne 1 ]; then
+    echo "Error: Expected only one argument"
+    usage 
+    exit 1
+fi
+
+sed -i "s/NAME/$1/g" docs/* NAME/* tests/**
+mv NAME $1
+mv tests/NAME_tests.py tests/$1_tests.py
+
+
+
